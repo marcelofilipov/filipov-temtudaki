@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { View } from 'react-native';
+import { StyleSheet, View } from 'react-native';
 import { Button, Input, Text } from 'react-native-elements';
 import Icon from 'react-native-vector-icons/FontAwesome';
 
@@ -17,8 +17,12 @@ export default function Login({ navigation }) {
         })
     }
 
+    const cadastrar = () => {
+        navigation.navigate("Cadastro")
+    }
+
     return (
-        <View style={styles.container}>
+        <View style={[styles.container, specificStyle.specificContainer]}>
             <Text h3>Entrar no Temtudaki!</Text>
             <Input
                 placeholder="E-mail"
@@ -40,10 +44,33 @@ export default function Login({ navigation }) {
                         color="white"
                     />
                 }
-                title="Entrar"
+                title=" Entrar"
+                buttonStyle={specificStyle.button}
                 onPress={() => entrar()}
             />
-
+            <Button
+                icon={
+                    <Icon
+                        name="user"
+                        size={15}
+                        color="white"
+                    />
+                }
+                title=" Cadastrar"
+                buttonStyle={specificStyle.button}
+                onPress={() => cadastrar()}
+            />
         </View>
     );
 }
+
+const specificStyle = StyleSheet.create({
+    specificContainer: {
+        backgroundColor: '#fff',
+    },
+    button: {
+        width: '100%',
+        marginTop: 10,
+        borderRadius: 5,
+    },
+})
