@@ -25,7 +25,8 @@ export default function Login({ navigation }) {
         <View style={[styles.container, specificStyle.specificContainer]}>
             <Text h3>Entrar no Temtudaki!</Text>
             <Input
-                placeholder="E-mail"
+                label='Your Email Address'
+                //placeholder="E-mail"
                 leftIcon={{ type: 'font-awesome', name: 'envelope' }}
                 keyboardType="email-address"
                 onChangeText={value => setEmail(value)}

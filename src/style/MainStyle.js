@@ -10,7 +10,7 @@ const styles = StyleSheet.create({
     },
     container: {
         flex: 1,
-        backgroundColor: '#ccc',
+        backgroundColor: '#fff',
         justifyContent: 'center',
         //FIXME Resolver o problema de alinhamento dos botões
         alignItems: 'center',
